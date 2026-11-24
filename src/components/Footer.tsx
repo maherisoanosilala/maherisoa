@@ -1,5 +1,6 @@
 import { profile } from "@/lib/data";
 import { FiGithub } from "react-icons/fi";
+import { CurrentYear } from "./CurrentYear";
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 dark:text-stone-500">
         <div className="flex items-center gap-2">
           <p>
-            © {new Date().getFullYear()} {profile.firstName} {profile.lastName}.
+            © <CurrentYear /> {profile.firstName} {profile.lastName}.
           </p>
           <span className="hidden sm:inline text-stone-300 dark:text-stone-700">|</span>
           <p className="italic">Conçu & codé avec soin.</p>
@@ -16,7 +17,7 @@ export function Footer() {
         <div className="flex items-center gap-6">
           {/* Lien vers le code source - Très pro ! */}
           <a
-            href="https://github.com/ton-username/ton-repo" // 👈 Mets ton vrai lien ici
+            href="https://github.com/maherisoanosilala/maherisoa" // 👈 Mets ton vrai lien ici
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors group"
