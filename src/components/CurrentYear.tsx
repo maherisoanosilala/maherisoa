@@ -1,14 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
+
+const subscribe = () => () => {};
+const getSnapshot = () => new Date().getFullYear();
+const getServerSnapshot = () => null;
 
 export function CurrentYear() {
-  const [year, setYear] = useState<number | null>(null);
-
-  useEffect(() => {
-    // Ce code ne s'exécute que dans le navigateur, après le rendu initial
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = useSyncExternalStore<number | null>(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
 
   // On affiche un placeholder vide pendant le rendu serveur
   // pour éviter tout décalage visuel (layout shift)

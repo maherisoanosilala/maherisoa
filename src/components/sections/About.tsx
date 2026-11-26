@@ -1,5 +1,6 @@
 import { Section } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
+import { SpotlightCard } from "../ui/SpotlightCard";
 import { profile, expertise } from "@/lib/data";
 
 export function About() {
@@ -18,29 +19,38 @@ export function About() {
         </>
       }
     >
-      <div className="grid md:grid-cols-12 gap-12">
-        <Reveal className="md:col-span-7 space-y-5 text-stone-600 dark:text-stone-400 leading-relaxed">
+      <div className="grid md:grid-cols-12 gap-12 items-start">
+        {/* Colonne de gauche : Bio */}
+        <Reveal className="md:col-span-6 space-y-5 text-stone-600 dark:text-stone-400 leading-relaxed sticky top-24">
           <p className="text-lg text-stone-800 dark:text-stone-200">
             {profile.bio}
           </p>
           <p>{profile.bio2}</p>
         </Reveal>
 
-        <Reveal delay={0.15} className="md:col-span-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 mb-5">
+        {/* Colonne de droite : Grille d'expertises */}
+        <Reveal delay={0.15} className="md:col-span-6">
+          <p className="text-xs uppercase tracking-[0.2em] text-stone-500 dark:text-stone-500 mb-6 font-medium">
             Domaines d'expertise
           </p>
-          <ul className="space-y-3">
+          
+          <div className="grid sm:grid-cols-2 gap-4">
             {expertise.map((item, i) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 text-sm text-stone-700 dark:text-stone-300 group"
-              >
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 shrink-0 group-hover:scale-150 transition-transform" />
-                <span>{item}</span>
-              </li>
+              <Reveal key={item} delay={0.1 + i * 0.05}>
+                <SpotlightCard className="group h-full">
+                  <div className="flex flex-col gap-3">
+                    {/* Numéro de la carte (01, 02...) */}
+                    <span className="font-mono text-xs text-stone-300 dark:text-stone-700 group-hover:text-emerald-500 transition-colors">
+                      0{i + 1}
+                    </span>
+                    <span className="text-sm font-medium text-stone-800 dark:text-stone-200 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                      {item}
+                    </span>
+                  </div>
+                </SpotlightCard>
+              </Reveal>
             ))}
-          </ul>
+          </div>
         </Reveal>
       </div>
     </Section>

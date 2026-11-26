@@ -12,7 +12,7 @@ export const profile = {
   phone: "+261 38 06 710 10",
   phone2: "+261 37 40 631 62",
   location: "Fianarantsoa, Madagascar",
-  cvUrl: "https://drive.google.com/drive/u/0/folders/1qNDubjAD19n7VpO3V-jHskzUBkXjceE_",
+  cvUrl: "https://drive.google.com/file/d/1wx-ajzJkb6_a1gWVora1LtDp7fV_7h-L/view?usp=drive_link",
   bio: "Software Engineer Full-Stack doté d'une solide expertise en administration système et réseau, je conçois, déploie et maintiens des solutions applicatives et infrastructures critiques de bout en bout. Spécialisé dans l'écosystème Next.js / Node.js, j'interviens aussi bien sur l'architecture logicielle et le packaging que sur la configuration serveur, la mise en réseau et le déploiement (on-premise ou cloud).",
   bio2: "Habitué aux environnements exigeants (administration publique, industrie, agritech, e-commerce), je veille à la fiabilité technique, la sécurité et la traçabilité des données, ainsi qu'à l'adoption terrain par les utilisateurs.",
 };
