@@ -31,7 +31,7 @@ export function CustomCursor() {
   return (
     <div className="hidden md:block">
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 pointer-events-none z-9999"
         style={{ x: cursorX, y: cursorY, translateX: "-50%", translateY: "-50%" }}
         animate={{ opacity: hidden ? 0 : 1, scale: hovering ? 0 : 1 }}
         transition={{ duration: 0.15 }}
